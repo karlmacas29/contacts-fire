@@ -1,6 +1,10 @@
-# note_app
+# Contacts-fire
 
-A new Flutter project.
+A new Basic(First Time)Flutter project app Just like contacts in android fully use by firebase.
+#Features
+-Firebase CRUD
+-Google API log In
+
 
 ## Getting Started
 
