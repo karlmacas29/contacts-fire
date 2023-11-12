@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "582879525679",
+    "project_id": "contacts-fire-529ed",
+    "storage_bucket": "contacts-fire-529ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582879525679:android:ca60c83d4dbd518a77bfda",
+        "android_client_info": {
+          "package_name": "com.example.note_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZcbshjZ7Q4IF0mmVvtVmypEToE4yEid0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
