@@ -1,9 +1,9 @@
 # Contacts-fire
 
 A new Basic(First Time)Flutter project app Just like contacts in android fully use by firebase.
-#Features
--Firebase CRUD
--Google API log In
+## Features
+- Firebase CRUD
+- Google API log In
 
 
 ## Getting Started
