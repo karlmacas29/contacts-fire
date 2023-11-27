@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/controllers/crud_services.dart';
+import 'package:contacts/controllers/crud_services.dart';
 
 class AddContact extends StatefulWidget {
   const AddContact({super.key});
@@ -17,9 +17,31 @@ class _AddContactState extends State<AddContact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Add Contact",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        iconTheme: const IconThemeData(color: Colors.white),
+        centerTitle: true,
+        title: const Column(
+          children: [
+            CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.white,
+              child: Icon(
+                Icons.person_add,
+                color: Color.fromRGBO(99, 69, 138, 1),
+                size: 40,
+              ),
+            ),
+            Text(
+              "Create New Contact",
+              style: TextStyle(color: Colors.white),
+            )
+          ],
+        ),
+        toolbarHeight: 150,
+        backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
         ),
       ),
       body: Container(
@@ -91,18 +113,34 @@ class _AddContactState extends State<AddContact> {
                 if (formKey.currentState!.validate()) {
                   CRUDService().addNewContact(
                       _nameCont.text, _phoneCont.text, _emailCont.text);
+
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Contacts Added!"),
+                  ));
                   Navigator.pop(context);
                 }
               },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepOrange[200],
+                  backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
                   fixedSize: const Size(200, 50),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
-              child: const Text(
-                "Add To Contact",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.person_add,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Add Contact",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600),
+                  )
+                ],
               ),
             ),
           ]),

@@ -1,4 +1,4 @@
-name: note_app
+name: contacts
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,6 +40,9 @@ dependencies:
   firebase_auth: ^4.13.0
   google_sign_in: ^6.1.6
   url_launcher: ^6.2.1
+  loading_animation_widget: ^1.2.0+4
+  provider: ^6.1.1
+
 
 dev_dependencies:
   flutter_test:

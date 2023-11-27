@@ -1,11 +1,15 @@
+import 'package:contacts/themes/theme.dart';
+import 'package:contacts/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:note_app/views/add_contact_page.dart';
-import 'package:note_app/views/home.dart';
-import 'package:note_app/views/login_page.dart';
-import 'package:note_app/views/signup_page.dart';
+import 'package:contacts/views/add_contact_page.dart';
+import 'package:contacts/views/home.dart';
+import 'package:contacts/views/login_page.dart';
+import 'package:contacts/views/signup_page.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import 'package:note_app/controllers/auth_service.dart';
+import 'package:contacts/controllers/auth_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +17,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: ((context) => ThemeProvider()), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,10 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Contacts Fire',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
-        useMaterial3: true,
-      ),
+      theme: Provider.of<ThemeProvider>(context).themeData,
       initialRoute: "/",
       routes: {
         "/": (context) => const CheckUser(),
@@ -65,8 +67,11 @@ class _CheckUserState extends State<CheckUser> {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
-    );
+    return Center(
+        child: LoadingAnimationWidget.discreteCircle(
+            thirdRingColor: const Color.fromRGBO(178, 136, 192, 1),
+            secondRingColor: const Color.fromRGBO(228, 183, 229, 1),
+            color: const Color.fromRGBO(99, 69, 138, 1),
+            size: 75));
   }
 }

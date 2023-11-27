@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/controllers/crud_services.dart';
+import 'package:contacts/controllers/crud_services.dart';
 
 class UpdateContact extends StatefulWidget {
   const UpdateContact(
@@ -32,9 +32,31 @@ class _UpdateContactState extends State<UpdateContact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Edit Contact",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        iconTheme: IconThemeData(color: Colors.white),
+        centerTitle: true,
+        title: Column(
+          children: [
+            const CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.white,
+              child: Icon(
+                Icons.person,
+                color: Color.fromRGBO(99, 69, 138, 1),
+                size: 40,
+              ),
+            ),
+            Text(
+              widget.name,
+              style: const TextStyle(color: Colors.white),
+            )
+          ],
+        ),
+        toolbarHeight: 150,
+        backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
         ),
       ),
       body: Container(
@@ -106,18 +128,33 @@ class _UpdateContactState extends State<UpdateContact> {
                 if (formKey.currentState!.validate()) {
                   CRUDService().updateContact(_nameCont.text, _phoneCont.text,
                       _emailCont.text, widget.docId);
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Update Contact Successfully!"),
+                  ));
                   Navigator.pop(context);
                 }
               },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepOrange[200],
+                  backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
                   fixedSize: const Size(200, 50),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
-              child: const Text(
-                "Update Contact",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.check,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Update",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600),
+                  )
+                ],
               ),
             ),
             const SizedBox(
@@ -126,17 +163,32 @@ class _UpdateContactState extends State<UpdateContact> {
             ElevatedButton(
               onPressed: () {
                 CRUDService().deleteContact(widget.docId);
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  content: Text("Delete Contact Successfully!"),
+                ));
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent[200],
+                  backgroundColor: const Color.fromRGBO(178, 136, 192, 1),
                   fixedSize: const Size(200, 50),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
-              child: const Text(
-                "Delete Contact",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.delete,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Delete",
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.w600),
+                  )
+                ],
               ),
             )
           ]),
