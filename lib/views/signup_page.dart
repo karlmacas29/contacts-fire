@@ -41,7 +41,7 @@ class _SignWidState extends State<SignWid> {
                 ),
                 const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("Create New Account",
+                  child: Text("Sign Up",
                       style: TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
@@ -121,7 +121,7 @@ class _SignWidState extends State<SignWid> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   child: const Text(
-                    "Sign Up",
+                    "Create Account",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.w600),
                   ),

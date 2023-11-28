@@ -1,4 +1,3 @@
-import 'package:contacts/themes/theme.dart';
 import 'package:contacts/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

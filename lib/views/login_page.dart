@@ -191,7 +191,7 @@ class _LoginWidState extends State<LoginWid> {
                               fontWeight: FontWeight.bold),
                         ))
                   ],
-                )
+                ),
               ],
             ),
           ),

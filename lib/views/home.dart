@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:contacts/controllers/auth_service.dart';
 import 'package:contacts/controllers/crud_services.dart';
 import 'package:contacts/views/update_contact_page.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -28,8 +28,26 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  //darkMode is either true or false
+  bool isOn = false;
+
   @override
   Widget build(BuildContext context) {
+    //profile pic Google
+    final User? user = FirebaseAuth.instance.currentUser;
+
+    // Default values if user is null
+    String name = 'Default Name';
+    String email = 'default@email.com';
+    String photoUrl = 'image/account_c.png';
+
+    if (user != null) {
+      // Update values if user is not null
+      name = user.displayName ?? name;
+      email = user.email ?? email;
+      photoUrl = user.photoURL ?? photoUrl;
+    }
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
           backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
@@ -59,18 +77,18 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => IconButton(
                     onPressed: () => Scaffold.of(context).openDrawer(),
                     icon: CircleAvatar(
-                      backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
-                      maxRadius: 32,
-                      child: Text(
-                        FirebaseAuth.instance.currentUser!.email
-                            .toString()[0]
-                            .toUpperCase(),
-                        style: const TextStyle(color: Colors.white),
-                      ),
+                      backgroundImage: user != null
+                          ? (photoUrl.startsWith('http') ||
+                                  photoUrl.startsWith('https'))
+                              ? NetworkImage(photoUrl)
+                              : AssetImage(photoUrl) as ImageProvider<Object>?
+                          : AssetImage(photoUrl),
+                      backgroundColor: Colors.white,
+                      radius: 20,
                     ),
                   )),
         ),
-        leadingWidth: 60,
+        leadingWidth: 70,
       ),
       drawer: Drawer(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -80,14 +98,14 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
               children: [
                 CircleAvatar(
-                  backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
-                  maxRadius: 32,
-                  child: Text(
-                    FirebaseAuth.instance.currentUser!.email
-                        .toString()[0]
-                        .toUpperCase(),
-                    style: const TextStyle(color: Colors.white),
-                  ),
+                  backgroundImage: user != null
+                      ? (photoUrl.startsWith('http') ||
+                              photoUrl.startsWith('https'))
+                          ? NetworkImage(photoUrl)
+                          : AssetImage(photoUrl) as ImageProvider<Object>?
+                      : AssetImage(photoUrl),
+                  backgroundColor: Colors.white,
+                  maxRadius: 42,
                 ),
                 const SizedBox(
                   height: 10,
@@ -95,6 +113,34 @@ class _HomePageState extends State<HomePage> {
                 Text(FirebaseAuth.instance.currentUser!.email.toString()),
               ],
             )),
+            ListTile(
+              leading: const Icon(Icons.dark_mode),
+              title: Row(children: [
+                const Text("Dark Mode"),
+                const SizedBox(
+                  width: 60,
+                ),
+                FlutterSwitch(
+                  activeColor: const Color.fromRGBO(178, 136, 192, 1),
+                  width: 60,
+                  height: 30,
+                  padding: 6,
+                  valueFontSize: 30,
+                  showOnOff: false,
+                  value: isOn,
+                  borderRadius: 30,
+                  toggleSize: 20,
+                  onToggle: (val) {
+                    setState(() {
+                      Provider.of<ThemeProvider>(context, listen: false)
+                          .toggleTheme();
+                      isOn = val;
+                    });
+                  },
+                )
+              ]),
+            ),
+            const SizedBox(height: 10),
             ListTile(
               onTap: () {
                 AuthService().logout();
@@ -106,17 +152,6 @@ class _HomePageState extends State<HomePage> {
               leading: const Icon(Icons.logout_outlined),
               title: const Text("Logout"),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            ListTile(
-              onTap: () {
-                Provider.of<ThemeProvider>(context, listen: false)
-                    .toggleTheme();
-              },
-              leading: const Icon(Icons.dark_mode),
-              title: const Text("Switch Theme"),
-            )
           ],
         ),
       ),

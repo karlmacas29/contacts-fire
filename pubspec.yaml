@@ -42,7 +42,7 @@ dependencies:
   url_launcher: ^6.2.1
   loading_animation_widget: ^1.2.0+4
   provider: ^6.1.1
-
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +76,7 @@ flutter:
   assets:
       - image/google-icon.png
       - image/phone.png
+      - image/account_c.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
