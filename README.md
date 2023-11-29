@@ -9,7 +9,6 @@ A new Basic(First Time App)Flutter project app Just like contacts in android ful
 - AppLauncher Call
 
 # UI
-<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/dd40b6c2-5006-4f68-8885-89a89d1f2d0e" width="100" height="100">
 
 ![Screenshot_20231130_002007](https://github.com/karlmacas29/contacts-fire/assets/83496597/dd40b6c2-5006-4f68-8885-89a89d1f2d0e)
 ![Screenshot_20231130_001949](https://github.com/karlmacas29/contacts-fire/assets/83496597/6aeb70fa-1ff7-4221-af67-b9e9a9710d32)
