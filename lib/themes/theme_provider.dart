@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:contacts/themes/theme.dart';
+import 'package:note_app/themes/theme.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeData _themeData = lightMode;

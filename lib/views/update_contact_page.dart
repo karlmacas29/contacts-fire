@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:contacts/controllers/crud_services.dart';
+import 'package:note_app/controllers/crud_services.dart';
 
 class UpdateContact extends StatefulWidget {
   const UpdateContact(

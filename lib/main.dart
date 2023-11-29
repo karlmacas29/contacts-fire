@@ -1,14 +1,14 @@
-import 'package:contacts/themes/theme_provider.dart';
+import 'package:note_app/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:contacts/views/add_contact_page.dart';
-import 'package:contacts/views/home.dart';
-import 'package:contacts/views/login_page.dart';
-import 'package:contacts/views/signup_page.dart';
+import 'package:note_app/views/add_contact_page.dart';
+import 'package:note_app/views/home.dart';
+import 'package:note_app/views/login_page.dart';
+import 'package:note_app/views/signup_page.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import 'package:contacts/controllers/auth_service.dart';
+import 'package:note_app/controllers/auth_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

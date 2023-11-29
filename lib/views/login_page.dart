@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:contacts/controllers/auth_service.dart';
+import 'package:note_app/controllers/auth_service.dart';
 
 class LoginWid extends StatefulWidget {
   const LoginWid({super.key});
@@ -133,8 +133,8 @@ class _LoginWidState extends State<LoginWid> {
                   height: 15,
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    AuthService().continueWithGoogle().then((value) {
+                  onPressed: () async {
+                    await AuthService().continueWithGoogle().then((value) {
                       if (value == "Google Login Successful") {
                         ScaffoldMessenger.of(context)
                             .showSnackBar(const SnackBar(

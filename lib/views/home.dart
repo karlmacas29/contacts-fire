@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:contacts/themes/theme_provider.dart';
+import 'package:note_app/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:contacts/controllers/auth_service.dart';
-import 'package:contacts/controllers/crud_services.dart';
-import 'package:contacts/views/update_contact_page.dart';
+import 'package:note_app/controllers/auth_service.dart';
+import 'package:note_app/controllers/crud_services.dart';
+import 'package:note_app/views/update_contact_page.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -37,14 +37,10 @@ class _HomePageState extends State<HomePage> {
     final User? user = FirebaseAuth.instance.currentUser;
 
     // Default values if user is null
-    String name = 'Default Name';
-    String email = 'default@email.com';
     String photoUrl = 'image/account_c.png';
 
     if (user != null) {
       // Update values if user is not null
-      name = user.displayName ?? name;
-      email = user.email ?? email;
       photoUrl = user.photoURL ?? photoUrl;
     }
 
