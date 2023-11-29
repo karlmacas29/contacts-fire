@@ -1,6 +1,6 @@
 # Contacts-fire
 -By Karl Macas (thanks for the yt tutorial)
-A new Basic(First Time App)Flutter project app Just like contacts in android fully use by firebase.
+A new Basic Android App(First Time App) Flutter project app Just like contacts in android fully use by firebase.
 
 ## Features
 - Firebase CRUD
