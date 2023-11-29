@@ -17,15 +17,15 @@ A new Basic(First Time App)Flutter project app Just like contacts in android ful
 
 
 #Darkmode UI (Testing)
-![Screenshot_20231130_001823](https://github.com/karlmacas29/contacts-fire/assets/83496597/39258e74-1cbe-4d27-bbc2-16802b336718)
-![Screenshot_20231130_001828](https://github.com/karlmacas29/contacts-fire/assets/83496597/dc590c6e-8d57-4f68-9291-70433a2104c1)
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/39258e74-1cbe-4d27-bbc2-16802b336718" width="200" height="400">
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/dc590c6e-8d57-4f68-9291-70433a2104c1" width="200" height="400">
 https://github.com/karlmacas29/contacts-fire/assets/83496597/2826a192-5c9d-4242-ad49-b0e1264cf2ba
 
 
 #Works in Google Sign IN
-![Screenshot_20231130_001800](https://github.com/karlmacas29/contacts-fire/assets/83496597/a6c168cc-1e07-4130-8656-8f5c6f58beec)
-![Screenshot_20231130_001809](https://github.com/karlmacas29/contacts-fire/assets/83496597/48996c5c-c859-4c8a-8e17-496c25c1e294)
-![Screenshot_20231130_001816](https://github.com/karlmacas29/contacts-fire/assets/83496597/8ea45c82-bf7a-4c48-ad6c-0504a6ef098c)
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/a6c168cc-1e07-4130-8656-8f5c6f58beec" width="200" height="400">
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/48996c5c-c859-4c8a-8e17-496c25c1e294" width="200" height="400">
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/8ea45c82-bf7a-4c48-ad6c-0504a6ef098c" width="200" height="400">
 
 
 #AppLauncher Call
