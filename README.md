@@ -10,12 +10,10 @@ A new Basic(First Time App)Flutter project app Just like contacts in android ful
 
 # UI
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/dd40b6c2-5006-4f68-8885-89a89d1f2d0e" width="200" height="400">
-
-![Screenshot_20231130_002007](https://github.com/karlmacas29/contacts-fire/assets/83496597/dd40b6c2-5006-4f68-8885-89a89d1f2d0e)
-![Screenshot_20231130_001949](https://github.com/karlmacas29/contacts-fire/assets/83496597/6aeb70fa-1ff7-4221-af67-b9e9a9710d32)
-![Screenshot_20231130_001953](https://github.com/karlmacas29/contacts-fire/assets/83496597/be692af4-f74f-4aee-b69c-9c882be55aa8)
-![Screenshot_20231130_001840](https://github.com/karlmacas29/contacts-fire/assets/83496597/0b33435c-0dc8-4e0c-82b3-d020928709f4)
-![Screenshot_20231130_001834](https://github.com/karlmacas29/contacts-fire/assets/83496597/f1610ef5-8719-4761-8d4f-eb52e42c7f50)
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/6aeb70fa-1ff7-4221-af67-b9e9a9710d32" width="200" height="400">
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/be692af4-f74f-4aee-b69c-9c882be55aa8" width="200" height="400">
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/0b33435c-0dc8-4e0c-82b3-d020928709f4" width="200" height="400">
+<img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/f1610ef5-8719-4761-8d4f-eb52e42c7f50" width="200" height="400">
 
 
 #Darkmode UI (Testing)
