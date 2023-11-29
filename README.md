@@ -16,26 +16,26 @@ A new Basic(First Time App)Flutter project app Just like contacts in android ful
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/f1610ef5-8719-4761-8d4f-eb52e42c7f50" width="200" height="400">
 
 
-#Darkmode UI (Testing)
+# Darkmode UI (Testing)
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/39258e74-1cbe-4d27-bbc2-16802b336718" width="200" height="400">
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/dc590c6e-8d57-4f68-9291-70433a2104c1" width="200" height="400">
 https://github.com/karlmacas29/contacts-fire/assets/83496597/2826a192-5c9d-4242-ad49-b0e1264cf2ba
 
 
-#Works in Google Sign IN
+# Works in Google Sign IN
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/a6c168cc-1e07-4130-8656-8f5c6f58beec" width="200" height="400">
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/48996c5c-c859-4c8a-8e17-496c25c1e294" width="200" height="400">
 <img src="https://github.com/karlmacas29/contacts-fire/assets/83496597/8ea45c82-bf7a-4c48-ad6c-0504a6ef098c" width="200" height="400">
 
 
-#AppLauncher Call
+# AppLauncher Call
 https://github.com/karlmacas29/contacts-fire/assets/83496597/90474de6-00db-4cc2-ac77-b93c870d9922
 
-##Sources and Tutorials
+## Sources and Tutorials
 - https://youtu.be/_eVpCZyqjtM?si=r89Fo0AWXH2TsikB
 - https://youtu.be/-jdtfJe_sII?si=7wFhaJL1QvMBwAth
 
-#Known Bugs
+## Known Bugs
 -Dark mode just made temporary on
 -needs to be clear data when you switch or use different google account
 
