@@ -38,8 +38,8 @@ https://github.com/karlmacas29/contacts-fire/assets/83496597/90474de6-00db-4cc2-
 - https://youtu.be/-jdtfJe_sII?si=7wFhaJL1QvMBwAth
 
 ## Known Bugs
--Dark mode just made temporary on
--needs to be clear data when you switch or use different google account
+- Dark mode just made temporary on
+- Needs to be clear data when you switch or use different google account
 
 
 
