@@ -67,10 +67,12 @@ class _CheckUserState extends State<CheckUser> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: LoadingAnimationWidget.discreteCircle(
-            thirdRingColor: const Color.fromRGBO(178, 136, 192, 1),
-            secondRingColor: const Color.fromRGBO(228, 183, 229, 1),
-            color: const Color.fromRGBO(99, 69, 138, 1),
-            size: 75));
+      child: LoadingAnimationWidget.discreteCircle(
+        thirdRingColor: const Color.fromRGBO(178, 136, 192, 1),
+        secondRingColor: const Color.fromRGBO(228, 183, 229, 1),
+        color: const Color.fromRGBO(99, 69, 138, 1),
+        size: 75,
+      ),
+    );
   }
 }

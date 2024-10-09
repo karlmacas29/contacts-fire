@@ -56,15 +56,14 @@ class _HomePageState extends State<HomePage> {
           )),
       appBar: AppBar(
         toolbarHeight: 70,
-        flexibleSpace: Container(
-          margin: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: const Color.fromRGBO(178, 136, 192, 1)),
-        ),
+        backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
         title: const Text(
           "Contacts",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
         centerTitle: true,
         leading: Padding(
@@ -154,16 +153,20 @@ class _HomePageState extends State<HomePage> {
       body: StreamBuilder<QuerySnapshot>(
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
-            return const Text("Something Went Wrong");
+            return const Center(
+                child: Text("Something Went Wrong or No Data Connection"));
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
-                child: LoadingAnimationWidget.discreteCircle(
-                    thirdRingColor: const Color.fromRGBO(178, 136, 192, 1),
-                    secondRingColor: const Color.fromRGBO(228, 183, 229, 1),
-                    color: const Color.fromRGBO(99, 69, 138, 1),
-                    size: 75));
+              child: LoadingAnimationWidget.discreteCircle(
+                thirdRingColor: const Color.fromRGBO(178, 136, 192, 1),
+                secondRingColor: const Color.fromRGBO(228, 183, 229, 1),
+                color: const Color.fromRGBO(99, 69, 138, 1),
+                size: 75,
+              ),
+            );
           }
+
           return ListView(
             children: snapshot.data!.docs
                 .map((DocumentSnapshot document) {
@@ -172,14 +175,17 @@ class _HomePageState extends State<HomePage> {
                   return ListTile(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UpdateContact(
-                                    docId: document.id,
-                                    name: data["name"],
-                                    phone: data["phone"],
-                                    email: data["email"],
-                                  )));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UpdateContact(
+                            docId: document.id,
+                            name: data["name"],
+                            phone: data["phone"],
+                            email: data["email"],
+                            code: data["countryCode"],
+                          ),
+                        ),
+                      );
                     },
                     leading: CircleAvatar(
                       backgroundColor: const Color.fromRGBO(99, 69, 138, 1),
@@ -189,16 +195,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     title: Text(
-                      data["name"],
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      "${data["name"]}",
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    subtitle: Text(data["phone"]),
+                    subtitle: Text("${data["countryCode"]}  ${data["phone"]}"),
                     trailing: IconButton(
-                        color: const Color.fromRGBO(99, 69, 138, 1),
-                        onPressed: () {
-                          callUser(data["phone"]);
-                        },
-                        icon: Icon(Icons.call)),
+                      color: const Color.fromRGBO(99, 69, 138, 1),
+                      onPressed: () {
+                        callUser(data["phone"]);
+                      },
+                      icon: const Icon(Icons.call),
+                    ),
                   );
                 })
                 .toList()
